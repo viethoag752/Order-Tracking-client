@@ -13,6 +13,7 @@ root.render(
     </GlobalStyles>
   </React.StrictMode>,
 );
+<script src="https://kit.fontawesome.com/4a0aebdf59.js" crossorigin="anonymous"></script>;
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
