@@ -4,9 +4,11 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 function Sidebar() {
   return (
-    <div className={cx('wrapper')}>
-      <div className={cx('content')}>Sidebar</div>
-    </div>
+    <aside className={cx('wrapper')}>
+      <div className={cx('content')}>
+        <h1>Sidebar</h1>
+      </div>
+    </aside>
   );
 }
 
