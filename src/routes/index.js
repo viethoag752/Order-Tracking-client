@@ -6,7 +6,7 @@ import Login from '~/pages/Login';
 import Home from '~/pages/Home';
 //public routes
 const publicRoutes = [
-  { path: '/', component: Home },
+  { path: '/', component: Home, layout: AuthLayout },
   { path: '/login', component: Login, layout: AuthLayout },
 ];
 //private routes

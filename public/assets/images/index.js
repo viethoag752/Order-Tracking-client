@@ -49,10 +49,8 @@ function Header() {
             <a href="/">Contact</a>
           </li>
         </ul>
-        <div className={cx('language')}>
-          <img src="/assets/images/global.svg" alt="Language" height="20px" />
-          <span style={{ fontSize: '20px', marginBottom: '5px', fontWeight: 'bold' }}>VI</span>
-          <img src="/assets/images/drop.svg" alt="Language" height="8px" style={{ marginBottom: '5px' }} />
+        <div>
+          <img src="/assets/pic/global.svg" alt="Language" />
         </div>
       </div>
     </header>
