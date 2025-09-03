@@ -4,7 +4,18 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function Button({ to, href, notVisible = false, light, disabled, primary, children, onClick, ...passProps }) {
+function Button({
+  to,
+  href,
+  className,
+  notVisible = false,
+  light,
+  disabled,
+  primary,
+  children,
+  onClick,
+  ...passProps
+}) {
   let Btn = 'button';
   const _props = {
     onClick,
@@ -18,6 +29,7 @@ function Button({ to, href, notVisible = false, light, disabled, primary, childr
     Btn = 'a';
   }
   const classes = cx('wrapper', {
+    [className]: className,
     notVisible,
     primary,
     light,

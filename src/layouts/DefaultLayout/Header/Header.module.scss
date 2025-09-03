@@ -82,25 +82,10 @@
 //actions
 .actions {
   display: flex;
+  align-items: center;
   height: 43.4px;
+  padding-left: 5px;
   flex: 1;
-  justify-content: space-around;
-
-  .status-action {
-    width: 48.41px;
-    align-content: center;
-    text-align: center;
-    border-radius: 92px;
-
-    &:hover {
-      background-color: rgba(235, 205, 185, 0.911);
-    }
-    svg {
-      cursor: pointer;
-      width: 60%;
-      height: 60%;
-    }
-  }
 }
 
 //navbar
@@ -119,7 +104,8 @@
   width: 200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-content: center;
 }
 
 .nav-list {
@@ -130,13 +116,10 @@
   justify-content: space-between;
 }
 .nav-item {
-  font-size: 2rem;
   font-weight: 500;
-  color: var(--dark);
 }
 .language {
-  width: 70px;
+  width: 60px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }

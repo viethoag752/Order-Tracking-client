@@ -1,9 +1,24 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '~/assets/icons';
+const MENU_ITEMS = [
+  {
+    title: 'Profile',
+    to: '/',
+  },
+  {
+    title: 'Log out',
+    to: '/',
+  },
+  {
+    title: 'Order',
+    to: '/',
+  },
+];
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -28,41 +43,50 @@ function Header() {
           </button>
         </div>
         <div className={cx('actions')}>
+          <Menu items={MENU_ITEMS}>
+            <Button href="/" className={cx('status-action')}>
+              <FontAwesomeIcon icon="fa-solid fa-bell" />
+            </Button>
+          </Menu>
           <Button href="/" className={cx('status-action')}>
-            <FontAwesomeIcon icon="fa-solid fa-bell" />
-          </Button>
-          <a href="/" className={cx('status-action')}>
             <FontAwesomeIcon icon="fa-solid fa-user" />
-          </a>
+          </Button>
         </div>
       </div>
       <div className={cx('navbar')}>
         <div className={cx('left-nav')}>
           <ul className={cx('nav-list')}>
             <li className={cx('nav-item')}>
-              <a href="/">Home</a>
+              <Button href="/">Home</Button>
             </li>
             <li className={cx('nav-item')}>
-              <a href="/">Products</a>
+              <Button href="/">Products</Button>
             </li>
             <li className={cx('nav-item')}>
-              <a href="/">About</a>
+              <Button href="/">About</Button>
             </li>
             <li className={cx('nav-item')}>
-              <a href="/">Contact</a>
+              <Button href="/">Contact</Button>
             </li>
           </ul>
         </div>
         <div className={cx('right-nav')}>
           <div className={cx('language')}>
             <img src="/assets/images/global.svg" alt="Language" height="20px" />
-            <span style={{ fontSize: '20px', marginBottom: '5px', fontWeight: 'bold' }}>VI</span>
-            <img src="/assets/images/drop.svg" alt="Language" height="8px" style={{ marginBottom: '5px' }} />
+            <span style={{ fontSize: '15px', marginBottom: '5px', fontWeight: 'bold' }}>VI</span>
+            <span>
+              <img
+                src="/assets/images/drop.svg"
+                alt="Language"
+                height="6px"
+                style={{ marginBottom: '5px', paddingRight: '5px' }}
+              />
+            </span>
           </div>
-          <Button notVisible to="/r" primary>
+          <Button to="/r" primary>
             Register
           </Button>
-          <Button notVisible to="/r" primary>
+          <Button to="/r" primary>
             Log in
           </Button>
         </div>
