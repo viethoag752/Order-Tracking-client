@@ -18,7 +18,7 @@
 .notVisible {
   display: none;
 }
-.status-action {
+.user-action {
   width: 25px;
   height: 25px;
   align-items: center;
@@ -28,5 +28,11 @@
     cursor: pointer;
     width: 60%;
     height: 60%;
+  }
+}
+.underline {
+  :hover {
+    text-decoration: underline;
+    color: var(--light);
   }
 }

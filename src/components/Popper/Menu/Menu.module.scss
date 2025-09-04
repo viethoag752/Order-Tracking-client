@@ -1,5 +1,16 @@
-.content {
-  width: 151px;
-  height: 121px;
+.menu-items {
+  min-height: 80px;
   border: 1px solid rgba(0, 0, 0, 0.09);
+}
+.menu-item {
+  padding-left: 7px;
+  :hover {
+    color: #00bfa5;
+  }
+}
+.language-poper {
+  width: 100px;
+}
+.user-poper {
+  width: 150px;
 }

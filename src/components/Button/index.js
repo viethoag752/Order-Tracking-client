@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Button({
+  underline,
   to,
   href,
   className,
@@ -30,6 +31,7 @@ function Button({
   }
   const classes = cx('wrapper', {
     [className]: className,
+    underline,
     notVisible,
     primary,
     light,
