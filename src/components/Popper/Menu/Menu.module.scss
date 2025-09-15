@@ -1,16 +1,28 @@
+//menu-items in command
 .menu-items {
   min-height: 80px;
   border: 1px solid rgba(0, 0, 0, 0.09);
 }
+//menu-item in command
 .menu-item {
   padding-left: 7px;
   :hover {
     color: #00bfa5;
   }
 }
-.language-poper {
+
+//language menu popper
+.language-popper {
   width: 100px;
 }
-.user-poper {
+//user menu popper
+.user-popper {
   width: 150px;
+}
+//menu alert popper
+.alert-popper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
 }

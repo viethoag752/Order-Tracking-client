@@ -1,0 +1,23 @@
+:root {
+  --arrow-size: 8px;
+  --tooltip-bg: var(--light);
+}
+
+.arrow-popper {
+  position: absolute;
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+}
+.tooltip {
+  position: relative;
+}
+
+.arrow-popper::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--tooltip-bg);
+  transform: rotate(45deg);
+  top: calc(var(--arrow-size) * -1);
+}

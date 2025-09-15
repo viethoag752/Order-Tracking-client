@@ -1,10 +1,18 @@
+import config from '~/config';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import Language from '~/components/Language';
+import Search from '~/components/Search';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// eslint-disable-next-line
 import { library } from '~/assets/icons';
+import { Link } from 'react-router-dom';
+
+const currentUser = true;
 const MENU_ITEMS = [
   {
     title: 'Profile',
@@ -24,11 +32,24 @@ const MENU_ITEMS = [
 ];
 const LANGUAGE = [
   {
-    code: 'en',
+    code: 'EN',
     title: 'English',
+    Children: {
+      title: 'test',
+      data: [
+        {
+          title: 'test-1',
+          code: 'test-1',
+        },
+        {
+          title: 'test-2',
+          code: 'test-2',
+        },
+      ],
+    },
   },
   {
-    code: 'vi',
+    code: 'VI',
     title: 'Vietnamese',
   },
 ];
@@ -37,33 +58,33 @@ const cx = classNames.bind(styles);
 function Header() {
   return (
     <header className={cx('wrapper')}>
-      <div className={cx('')}></div>
       <div className={cx('search-wrapper')}>
         <div className={cx('logo')}>
-          <img
-            className={cx('my_logo_img max-width-100')}
-            alt="logo"
-            src="https://www.logomaker.com/api/main/images/1j+ojVBCOMkX9Wytehe43D6kh...+BrBZOnRbEwXs1M3EMoAJtlyUrhPNi9PQ8"
-          ></img>
+          <Link to={config.routes.home}>
+            <Image
+              className={cx('my_logo_img max-width-100')}
+              alt="logo"
+              src="https://www.logomaker.com/api/main/images/1j+ojVBCOMkX9Wytehe43D6kh...+BrBZOnRbEwXs1M3EMoAJtlyUrhPNi9PQ8"
+            ></Image>
+          </Link>
         </div>
-        <div className={cx('search')}>
-          <input placeholder="Search..." spellCheck="false" />
-          <button className={cx('clear-btn')}>
-            <FontAwesomeIcon icon="fa-solid fa-circle-xmark" />
-          </button>
-          <button className={cx('search-btn')}>
-            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-          </button>
-        </div>
+        <Search />
         <div className={cx('actions')}>
-          <Menu items={MENU_ITEMS} placeMent="bottom-start" className={cx('user-poper')}>
+          {currentUser ? (
+            <Menu items={MENU_ITEMS} placeMent="bottom-start" className={cx('user-popper')}>
+              <Button href="/" className={cx('user-action')}>
+                <FontAwesomeIcon icon="fa-solid fa-user" />
+              </Button>
+            </Menu>
+          ) : (
+            <span></span>
+          )}
+
+          <Menu className={cx('alert-popper')}>
             <Button href="/" className={cx('user-action')}>
-              <FontAwesomeIcon icon="fa-solid fa-user" />
+              <FontAwesomeIcon icon="fa-solid fa-bell" />
             </Button>
           </Menu>
-          <Button href="/" className={cx('user-action')}>
-            <FontAwesomeIcon icon="fa-solid fa-bell" />
-          </Button>
         </div>
       </div>
       <div className={cx('navbar')}>
@@ -84,26 +105,19 @@ function Header() {
           </ul>
         </div>
         <div className={cx('right-nav')}>
-          <div className={cx('language')}>
-            <img src="/assets/images/global.svg" alt="Language" height="20px" />
-            <span style={{ fontSize: '15px', marginBottom: '5px', fontWeight: 'bold' }}>VI</span>
-            <span>
-              <Menu items={LANGUAGE} placeMent="bottom" className={cx('language-poper')}>
-                <img
-                  src="/assets/images/drop.svg"
-                  alt="Language"
-                  height="6px"
-                  style={{ marginBottom: '5px', paddingRight: '5px' }}
-                />
-              </Menu>
-            </span>
-          </div>
-          <Button underline to="/r" primary>
-            Register
-          </Button>
-          <Button underline to="/r" primary>
-            Log in
-          </Button>
+          <Language Languages={LANGUAGE} />
+          {currentUser ? (
+            <span></span>
+          ) : (
+            <>
+              <Button underline to="/r" primary>
+                Register
+              </Button>
+              <Button underline to="/r" primary>
+                Log in
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </header>

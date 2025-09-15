@@ -1,3 +1,4 @@
+import config from '~/config';
 //Layouts
 import { AuthLayout, DefaultLayout } from '~/layouts';
 //Pages
@@ -6,8 +7,8 @@ import Login from '~/pages/Login';
 import Home from '~/pages/Home';
 //public routes
 const publicRoutes = [
-  { path: '/', component: Home, layout: AuthLayout },
-  { path: '/login', component: Login, layout: AuthLayout },
+  { path: config.routes.home, component: Home, layout: AuthLayout },
+  { path: config.routes.login, component: Login, layout: AuthLayout },
 ];
 //private routes
 const privateRoutes = [{ path: '/c', component: Detail, Layout: DefaultLayout }];

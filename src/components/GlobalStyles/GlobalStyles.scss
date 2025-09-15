@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://kit.fontawesome.com/4a0aebdf59.js');
 
 * {
@@ -9,6 +8,7 @@
 }
 
 :root {
+  --font-primary: Helvetica Neue, ui-sans-serif, system-ui, sans-serif;
   --primary: coral;
   --dark: #1a1919;
   --light: #fff;
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: FormaDJRText, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-style: normal;
   color: var(--text-color);
@@ -36,4 +36,20 @@ input,
 a[href] {
   color: var(--dark);
   text-decoration: none;
+}
+//Fonts embeded
+@font-face {
+  font-family: Helvetica Neue;
+  src: url('/assets/fonts/vietnamese-regular.woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: Helvetica Neue;
+  src: url('/assets/fonts/vietnamese-regular.woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: Helvetica Neue;
+  src: url('/assets/fonts/vietnamese-regular.woff2');
+  font-weight: 700;
 }
