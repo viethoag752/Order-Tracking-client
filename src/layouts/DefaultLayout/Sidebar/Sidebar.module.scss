@@ -3,7 +3,89 @@
   min-height: 1000px;
 }
 .content {
-  padding: 20px 0;
+  padding: 10px 0;
   width: 100%;
   height: 100%;
+}
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d14e34;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  margin: 0;
+}
+
+.edit-profile {
+  font-size: 15px;
+  color: #888;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: auto;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  font-family: var(--font-primary);
+  color: #333;
+  user-select: none;
+}
+
+.sidebar-item.active {
+  color: #ee4d2d;
+  font-weight: bold;
+}
+
+.subsidebar {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 15px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.subsidebar.active {
+  display: flex;
+}
+
+.subsidebar-item {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.subsidebar-item:hover {
+  color: #ee4d2d;
+}
+.subsidebar-item.active {
+  color: #ee4d2d;
 }

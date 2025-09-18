@@ -8,7 +8,7 @@ import MenuItems from './MenuItems';
 import Arrow from '~/components/Popper/Arrow';
 
 const cx = classNames.bind(styles);
-function Menu({ children, items = [], placeMent = 'auto', className, context = {} }) {
+function Menu({ visible, children, items = [], placeMent = 'auto', className, context = {} }) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
   const renderItems = () => {
@@ -36,6 +36,7 @@ function Menu({ children, items = [], placeMent = 'auto', className, context = {
   return (
     <span>
       <Headless
+        visible={visible}
         interactive={true}
         delay={[0, 200]}
         placement={placeMent}

@@ -16,6 +16,7 @@
     "axios": "^1.11.0",
     "classnames": "^2.5.1",
     "customize-cra": "^1.0.0",
+    "motion": "^12.23.12",
     "normalize.css": "^8.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
