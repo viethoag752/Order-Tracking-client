@@ -20,7 +20,6 @@ function Search() {
     console.log(product);
     setProduct(res);
   };
-
   const handleClear = () => {
     setSearchValue('');
     inputRef.current.focus();
@@ -28,14 +27,11 @@ function Search() {
 
   console.log('render');
 
-  const handleChange = useCallback(
-    (e) => {
-      console.log('change');
-      const searchValue = e.target.value;
-      if (!searchValue.startsWith(' ')) setSearchValue(searchValue);
-    },
-    [setSearchValue],
-  );
+  const handleChange = (e) => {
+    console.log('change');
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(' ')) setSearchValue(searchValue);
+  };
 
   return (
     <div className={cx('search')}>

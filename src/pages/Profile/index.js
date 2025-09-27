@@ -1,5 +1,1 @@
-function Logging() {
-  return <h1>Login Page</h1>;
-}
-
-export default Logging;
+export { default as Profile } from './Profile';

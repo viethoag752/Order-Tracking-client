@@ -40,7 +40,7 @@ const SIDEBAR_MENU = [
       data: [
         {
           title: 'Profile',
-          to: '/c/',
+          to: '/c/profile',
         },
         {
           title: 'Payment',

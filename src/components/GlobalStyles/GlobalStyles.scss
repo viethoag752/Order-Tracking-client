@@ -26,7 +26,19 @@ body {
   font-style: normal;
   color: var(--text-color);
 }
-
+img {
+  background-color: transparent;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 button,
 input,
 [tabindex] {
@@ -34,6 +46,7 @@ input,
   outline: none;
   border: none;
 }
+
 a[href] {
   color: var(--dark);
   text-decoration: none;

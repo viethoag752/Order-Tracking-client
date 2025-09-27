@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // eslint-disable-next-line
 import { library } from '~/assets/icons';
 import { Link } from 'react-router-dom';
+import Logo from '~/components/Logo';
 
 const currentUser = true;
 const MENU_ITEMS = [
@@ -60,13 +61,7 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('search-wrapper')}>
         <div className={cx('logo')}>
-          <Link to={config.routes.home}>
-            <Image
-              className={cx('my_logo_img max-width-100')}
-              alt="logo"
-              src="https://www.logomaker.com/api/main/images/1j+ojVBCOMkX9Wytehe43D6kh...+BrBZOnRbEwXs1M3EMoAJtlyUrhPNi9PQ8"
-            ></Image>
-          </Link>
+          <Logo />
         </div>
         <Search />
         <div className={cx('actions')}>

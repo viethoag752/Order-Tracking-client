@@ -1,0 +1,26 @@
+.wrapper {
+  background-color: var(--light);
+  display: flex;
+  height: 100%;
+}
+
+.phone-number-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  :active {
+    background-color: rgb(240, 152, 80);
+  }
+}
